@@ -4,12 +4,19 @@ import App from './App.jsx'
 import './index.css'
 import Buku from './Components/Buku.jsx'
 import IndukBuku from './induk-buku.jsx'
-
-
+import Navbar from './Components/Navbar.jsx'
+import Sidebar from './Components/Sidebar.jsx'
+import Layout from './Components/Layout.jsx'
+import Home from './Pages/Home.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
-    <IndukBuku/>
+    {/* <IndukBuku/> */}
+    {/* <Navbar/>
+    <Sidebar/> */}
+    {/* <Layout/> 
+   */}
+    <Home />
   </React.StrictMode>
 )
