@@ -1,6 +1,6 @@
 const Footer = () => {
     return ( 
-        <dib>Selesai</dib>
+        <div>Selesai</div>
      );
 }
  
