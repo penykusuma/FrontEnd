@@ -8,6 +8,7 @@ import Navbar from './Components/Navbar.jsx'
 import Sidebar from './Components/Sidebar.jsx'
 import Layout from './Components/Layout.jsx'
 import Home from './Pages/Home.jsx'
+import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -17,6 +18,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Sidebar/> */}
     {/* <Layout/> 
    */}
-    <Home />
+     {/* <Home />  */}
+
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 )
