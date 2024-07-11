@@ -1,28 +1,29 @@
-import IndukBuku from "./induk-buku";
-import Home from "./Pages/Home";
+// import IndukBuku from "./induk-buku";
+import Home from "./Pages/home";
 import { Route, Routes } from "react-router-dom";
 import State from "./Pages/state";
-import EventHandling from "./Pages/eventhandling";
-import UseEffect from "./Pages/UseEffect";
-import Animasi from "./Pages/Timer";
-import FetchApi from "./Pages/Fetch";
-import ReactContext from "./Pages/React Context";
-
-
+import EventHandling from "./Pages/eventHandling";
+import UseEffect from "./Pages/useEffect";
+import Animasi from "./Pages/timer";
+import FetchApi from "./Pages//fetch";
+import ReactContext from "./Pages/reactContext";
+import GetMahasiswa from "./Components/admin/GetMahasiswa";
+import CreateMahasiswa from "./Components/admin/CreateMahasiswa";
 
 function App() {
     return ( 
         <Routes>
             <Route path="/" element={<Home/>} />
-            <Route path="/" element={<IndukBuku/>} />
+            {/* <Route path="/" element={<IndukBuku/>} /> */}
             <Route path="/state" element={<State/>} />
-            <Route path="/eventhandling" element={<EventHandling/>} />
-            <Route path="/UseEffect" element={<UseEffect/>} />
-            <Route path="/Timer" element={<Animasi/>} />
-            <Route path="/Fetch" element={<FetchApi/>} />
-            <Route path="/ReactContext" element={<ReactContext/>} />
-            
-
+            <Route path="/eventHandling" element={<EventHandling/>} />
+            <Route path="/useEffect" element={<UseEffect/>} />
+            <Route path="/timer" element={<Animasi/>} />
+            <Route path="/fetch" element={<FetchApi/>} />
+            <Route path="/reactContext" element={<ReactContext/>} />
+            <Route path="/GetMahasiswa" element={<GetMahasiswa/>} />
+            <Route path="/CreateMahasiswa" element={<CreateMahasiswa/>} />
+        
         </Routes>
      );
 }
