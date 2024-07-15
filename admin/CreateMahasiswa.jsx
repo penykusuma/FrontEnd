@@ -28,10 +28,11 @@ const CreateMahasiswa = () => {
                 alert('Data berhasil ditambah')
                 clearForm()
             } catch (error) {
-                console.error(error)
+                console.error(error);
             }
         }
     };
+
 
     return (
         <>
@@ -42,51 +43,51 @@ const CreateMahasiswa = () => {
                         <label htmlFor="nim" className="block text-gray-700 font-bold mb-2">
                             NIM:
                         </label>
-                        <input 
-                            type="text" id="nim" className="shadow appearance-none border rounded w-full py-2 px-3
+                        <input
+                            type="text" id="nim" className="shadow appearance-none border rounded w-full py-2 px-3 
                             text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            placeholder="ex:1122102051"
+                            placeholder="ex: 1122102051"
                             value={nim}
                             onChange={(e) => { setNim(e.target.value) }}
                         />
                     </div>
                     <div className="mt-4">
-                    <label htmlFor="nama" className="block text-gray-700 font-bold mb-2">
-                            NAMA:
+                        <label htmlFor="nama" className="block text-gray-700 font-bold mb-2">
+                            Nama: 
                         </label>
                         <input 
-                            type="text" id="nama" className="shadow appearance-none border rounded w-full py-2 px-3
+                            type="text" id="nama" className="shadow appearance-none border rounded w-full py-2 px-3 
                             text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            placeholder=""
+                            placeholder="ex: umam"
                             value={nama}
-                            onChange={(e) => { setNama(e.target.value) }}
+                            onChange={(e) => {setNama(e.target.value) }}
                         />
                     </div>
                     <div className="mt-4">
                     <label htmlFor="angkatan" className="block text-gray-700 font-bold mb-2">
-                            ANGKATAN:
+                            Angkatan: 
                         </label>
                         <input 
-                            type="text" id="angkatan" className="shadow appearance-none border rounded w-full py-2 px-3
+                            type="text" id="angkatan" className="shadow appearance-none border rounded w-full py-2 px-3 
                             text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            placeholder=""
+                            placeholder="ex: 2022"
                             value={angkatan}
-                            onChange={(e) => { setAngkatan(e.target.value) }}
+                            onChange={(e) => {setAngkatan(e.target.value) }}
                         />
                     </div>
                     <div className="mt-4">
-                    <label htmlFor="angkatan" className="block text-gray-700 font-bold mb-2">
-                            PROGRAM STUDI:
+                    <label htmlFor="program-studi" className="block text-gray-700 font-bold mb-2">
+                            Program Studi: 
                         </label>
-                        <select 
-                            id="program studi"
-                            className="shadow appearance-none border rounded w-full py-2 px-3
+                        <select
+                            id="program-studi" 
+                            className="shadow appearance-none border rounded w-full py-2 px-3 
                             text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            placeholder="Teknik Informatika"
+                            placeholder="ex: umam"
                             value={prodi}
                             onChange={(e) => {setProdi(e.target.value) }}
                         >
-                            <option value="Teknik Informatika">Teknik Informatika</option>
+                            <option value="Teknik Informatika">Tekik Informatika</option>
                             <option value="Manajemen Informatika">Manajemen Informatika</option>
                         </select>
                     </div>
@@ -101,8 +102,7 @@ const CreateMahasiswa = () => {
                 </div>
             </div>
         </>
-    )
-
+    );
 }
 
 export default CreateMahasiswa;

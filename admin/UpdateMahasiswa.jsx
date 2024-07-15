@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import apis from "../../api/mahasiswa";
 
 const UpdateMahasiswa = ({ isOpen,onClose, mhs}) => {
-    const [_mhs, set_Mhs] = useState({nim:'',nama:'',angkatan:'',prodi:''})
+    const [_mhs, set_Mhs] = useState({nim:'', nama:'', angkatan:'', prodi:''})
 
     useEffect(() => {
-        set_Mhs({..._mhs, ...mhs})
+        set_Mhs({ ..._mhs, ...mhs})
+
     }, [mhs])
 
     const handleInputChange = (event) => {
@@ -29,18 +30,18 @@ const UpdateMahasiswa = ({ isOpen,onClose, mhs}) => {
         return null;
     }
 
-    return  (
+    return (
         <div className="fixed inset-0 flex items-center justify-center z-50">
             <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
             <div className="bg-white w-1/3 rounded-lg z-10">
                 <div className="p-4">
-                    <h2 className="text-xl font-bold mb-4">Update</h2>
+                    <h2 className="text-xl font-bold mb-4">Update Mahasiswa</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-4">
                             <label className="block text-gray-700 font-bold mb-1">
-                                NIM:
+                                NIM :
                             </label>
-                            <input 
+                            <input
                                 type="text"
                                 name="nim"
                                 className="w-full border border-gray-300 p-2 rounded-md"
@@ -50,9 +51,9 @@ const UpdateMahasiswa = ({ isOpen,onClose, mhs}) => {
                         </div>
                         <div className="mb-4">
                             <label className="block text-gray-700 font-bold mb-1">
-                                NAMA:
+                                Nama :
                             </label>
-                            <input 
+                            <input
                                 type="text"
                                 name="nama"
                                 className="w-full border border-gray-300 p-2 rounded-md"
@@ -62,9 +63,9 @@ const UpdateMahasiswa = ({ isOpen,onClose, mhs}) => {
                         </div>
                         <div className="mb-4">
                             <label className="block text-gray-700 font-bold mb-1">
-                                ANGKATAN:
+                                Angkatan :
                             </label>
-                            <input 
+                            <input
                                 type="text"
                                 name="angkatan"
                                 className="w-full border border-gray-300 p-2 rounded-md"
@@ -74,32 +75,32 @@ const UpdateMahasiswa = ({ isOpen,onClose, mhs}) => {
                         </div>
                         <div className="mb-4">
                             <label className="block text-gray-700 font-bold mb-1">
-                                PROGRAM STUDI:
+                                Prodi :
                             </label>
-                            <input 
+                            <input
                                 type="text"
-                                name="PRODI"
+                                name="prodi"
                                 className="w-full border border-gray-300 p-2 rounded-md"
                                 value={_mhs.prodi}
                                 onChange={handleInputChange}
                             />
                         </div>
-                        <div classname="text-right">
-                            <button 
+                        <div className="text-right">
+                            <button
                                 type="button"
-                                className="mr-2 bg-gray-300 px-4 py-2 rounded-md
+                                className="mr-2 bg-gray-300 px-4 py-2 rounded-md 
                                             hover:bg-slate-500 hover:text-white"
                                 onClick={onClose}
                             >
                                 Cancel
                             </button>
-                            <button 
+                            <button
                                 type="submit"
                                 className="bg-blue-600 text-blue px-4 py-2 rounded-md
                                             hover:bg-blue-800"
                             >
-                                Update
-                            </button>
+                                Update    
+                            </button>   
                         </div>
                     </form>
                 </div>

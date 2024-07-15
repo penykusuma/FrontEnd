@@ -9,11 +9,15 @@ import FetchApi from "./Pages//fetch";
 import ReactContext from "./Pages/reactContext";
 import GetMahasiswa from "./Components/admin/GetMahasiswa";
 import CreateMahasiswa from "./Components/admin/CreateMahasiswa";
+import Login from "./Components/auth/login";
+import Register from "./Components/auth/register";
+import DataMahasiswa from "./Components/admin/datamahasiswa";
+
 
 function App() {
     return ( 
         <Routes>
-            <Route path="/" element={<Home/>} />
+            <Route path="/" element={<Login/>} />
             {/* <Route path="/" element={<IndukBuku/>} /> */}
             <Route path="/state" element={<State/>} />
             <Route path="/eventHandling" element={<EventHandling/>} />
@@ -22,8 +26,10 @@ function App() {
             <Route path="/fetch" element={<FetchApi/>} />
             <Route path="/reactContext" element={<ReactContext/>} />
             <Route path="/GetMahasiswa" element={<GetMahasiswa/>} />
-            <Route path="/CreateMahasiswa" element={<CreateMahasiswa/>} />
-        
+            <Route path="/CreateMahasiswa" element={<CreateMahasiswa/>} /> 
+
+            <Route path="/register" element={<Register/>} />    
+            <Route path="/admin/data-mahasiswa" element={<DataMahasiswa/>} />   
         </Routes>
      );
 }
