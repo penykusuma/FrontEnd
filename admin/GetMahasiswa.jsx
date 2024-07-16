@@ -5,41 +5,7 @@
     const GetMahasiswa = () => {
         const [mahasiswa, setMahasiswa] = useState([]);
         const [error, setError] = useState(null);
-        const [nim, setNim] = useState('');
-        const [search, setSearch] = useState('')
-        const [_nim, set_Nim] = useState('')
-        const [mhs, setMhs] = useState({});
-        const [isDelete, setIsDelete] = useState(false)
-
-        const [isModalOpen, setIsModalOpen] = useState(false);
-
-        const openModal = (data) => {
-            console.log(data);
-            setMhs({ ...mhs, ...data})
-            console.log(mhs);
-            setNim(nim)
-            setIsModalOpen(true);
-        };
-
-        const closeModal = () => {
-            setIsModalOpen(false);
-        };
-
-        useEffect(() => {
-            const fetchData = async () => {
-                try{
-                    let response = await apis.getAllmahasiswa();
-                    if (search) {
-                        response = await apis.getMahasiswaByNim(search);
-                    }
-
-                    setMahasiswa(response.data);
-                } catch (error) {
-                    setError(error.message);
-                }
-            };
-            fetchData();
-        }, [search]);
+        const [nim, setNim] = useState('');        
 
         useEffect(() => {
             const fetchData = async () => {
@@ -56,17 +22,9 @@
             };
             fetchData();
         }, [nim, isModalOpen, isDelete]);
+
         if (error) {
             return <div>error: {error}</div>
-        }
-
-        const handleDelete = async (nim) => {
-            try {
-                await apis.deleteMahasiswa(nim);
-                setIsDelete(!isDelete);
-             } catch (error) {
-                console.error(error)
-             }
         }
 
         return (
@@ -121,17 +79,12 @@
                                     <td className="px-6 py-4 text-sm whitespace-nowrap">{mhs.nama}</td>
                                     <td className="px-6 py-4 text-sm whitespace-nowrap">{mhs.angkatan}</td>
                                     <td className="px-6 py-4 text-sm whitespace-nowrap">{mhs.prodi}</td>
-                                        <div className="flex flex-row justify-start">
-                                            <button className="text-blue-500 underline cursor-pointer hover:text-blue-700"
-                                                onClick={() => { openModal(mhs) }}>Edit</button>
-                                            <button className="text-blue-500 underline cursor-pointer hover:text-blue-700"
-                                                onClick={() => { handleDelete(mhs.nim) }}>Hapus</button>
-                                        </div>
+
                                 </tr>
                         ))}
                     </tbody>
                 </table>
-                <UpdateMahasiswa isOpen={isModalOpen} onClose={closeModal} mhs={mhs} />
+                <UpdateMahasiswa />
             </>
         )
     }
